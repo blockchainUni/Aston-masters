@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+    <%- include Partials/head.ejs %>  
+
+<body class="h-100">
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+
+
+
+    <div class="login-form-bg h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+    
+
+
+  
+                <div class="col-xl-8">
+                    <div class="form-input-content">
+                        <div class="card login-form mb-0">
+                            <div class="card-body pt-5">
+                                <h4 class="card-title">Payment</h4>
+             
+            <ul class="nav nav-pills mb-3">
+                <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Recommendation</a>
+                </li>
+            
+                <li class="nav-item"><a href="#navpills-2" class="nav-link " data-toggle="tab" aria-expanded="false">Investment</a>
+                </li>
+                 </ul>
+            <div class="tab-content br-n pn">
+                <div id="navpills-1" class="tab-pane active">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-md-4 col-xl-2">
+                            <img src="images/logo.png" alt="" class="img-fluid thumbnail m-r-15">
+                        </div>
+                        <div class="col-sm-6 col-md-8 col-xl-10">
+                            
+                            <br>
+                            <br>
+                            <br>
+
+
+                            <% if(locals.rid) { %>
+
+                            <div class="form-group">
+                                <input  type="text" class="form-control" value="<%- rid %>">
+                            </div>
+                            <button onclick="recommend('<%- rid %>')" class="btn login-form__btn submit w-100">Register</button>
+                       
+                            <% }else{ %>
+
+                                <div class="form-group">
+                                    <input id="reco" type="text" class="form-control" placeholder="Referral Link">
+                                </div>
+                        
+                                <button onclick="recommended()" class="btn login-form__btn submit w-100">Register</button>
+                       
+                                <% } %>
+
+                            
+                          
+                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/logout" class="text-primary">logout now</a></p>
+                                   
+                        </div>
+                    </div>
+                </div>
+                <div id="navpills-2" class="tab-pane">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-md-4 col-xl-2">
+                            <img src="images/logo.png" alt="" class="img-fluid thumbnail m-r-15">
+                 
+                        </div>
+                      
+                        <div class="col-sm-6 col-md-8 col-xl-10">
+                            <br>
+                            <br>
+                            <br>
+                            <p>If you dont have any referral code or referral ID then press Invest to Progress forward</p>
+                            <button onclick="invest()" class="btn login-form__btn submit w-100">Invest</button>    
+                        </div>
+
+                              
+                           
+                            
+                       
+                    </div>
+                </div>
+              
+                <br>
+                <br>
+                
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+<script>
+
+    function recommended()
+    {
+        var r = document.getElementById("reco").value;
+        recommend(r);
+    }
+</script>
+
+
+
+
+<script src="plugins/common/common.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/gleek.js"></script>
+<script src="js/styleSwitcher.js"></script>
+</body>
+</html>

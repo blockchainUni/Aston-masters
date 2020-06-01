@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include Partials/head.ejs %>  
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include Partials/loader.ejs %>  
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        
+
+
+
+        <%- include Partials/header.ejs %>  
+
+
+
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+       
+       
+       
+       
+
+        <%- include Partials/sidenav.ejs %>         
+       
+       
+       
+       
+       
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="login-form-bg h-100">
+                    <div class="container h-100">
+                        <div class="row justify-content-center h-100">
+                            <div class="col-xl-6">
+                                <div class="form-input-content">
+                                    <div class="card login-form mb-0">
+                                        <div class="card-body pt-5">
+                                            <a class="text-center" href="index.html"> <h4>WithDrawl</h4></a>
+                    
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <div class="input-group mb-3">
+                                                <input id="withdrawl_amount" type="number" class="form-control">
+                                                <div class="input-group-append">
+                                                    <button onclick="getallamount()" class="btn btn-outline-dark" type="button">Max</button>
+                                                </div>
+                                            </div>
+                                           
+            
+                                            
+                                           
+                                                      <button onclick="withDrawAmount()" class="btn login-form__btn submit w-100">Withdraw Amount</button>
+                                         
+                                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include Partials/footer.ejs %> 
+        <!--********************************** 
+
+            Footer end-->
+
+
+
+            <script>
+
+                function getallamount()
+                    {
+                        
+                        
+                         document.getElementById('withdrawl_amount').value = '<%- earnings %>';
+  
+                        
+                    }
+
+
+                    function withDrawAmount( )
+                    {
+                        var amount = document.getElementById('withdrawl_amount').value;
+                        if( amount > '<%- earnings %>')
+                        {
+                            alert('please put in appropriate amount')
+                        }
+                        else{
+                            withDrawAmounts();
+                        }
+                                           }
+                
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+    <%- include Partials/head.ejs %>  
+
+<body class="h-100">
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+
+
+
+    <div class="login-form-bg h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-xl-6">
+                    <div class="form-input-content">
+                        <div class="card login-form mb-0">
+                            <div class="card-body pt-5">
+                                <a class="text-center" href="/"> <h4>Aston</h4></a>
+		
+                                <br>
+                                <br>
+								<br>
+								
+
+                                <div class="text-center">
+                                <img src="images/metamask.png" height="30" width="30" alt="">
+                                <img src="images/trustwallet.png" height="30" width="30" alt="">
+                                <br>
+                            </div>
+                                
+								
+                               
+                                          <button onclick="login()" class="btn login-form__btn submit w-100">Login</button>
+                             
+                                          <br>
+                                          <br>
+                                          <div class="row">
+                                         <div class="col-md-6">
+                                            <a href="https://metamask.io/" style="color: white;background-color: #0000FF;" class="btn login-form__btn submit ">Download MetaMask</a>
+                                      
+                                         </div>   
+                                         <div class="col-md-6">
+                        
+                                          <a href="https://trustwallet.com/" style="color: white;background-color: #0000FF;" class="btn login-form__btn submit">Download TrustWallet</a>
+                                        </div>  
+                                        </div>
+                                          
+
+                                <p class="mt-2 login-form__footer">Dont have account? <a href="/signup" class="text-primary">Register</a> now</p>
+                                   
+                                             <h6>0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582<a href="https://rinkeby.etherscan.io/address/0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582" class="text-primary">Contract Address</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+</html>
+
+
+
+
+

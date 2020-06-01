@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include Partials/head.ejs %>  
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include Partials/loader.ejs %>  
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        
+
+
+
+        <%- include Partials/header.ejs %>  
+
+
+
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+       
+       
+       
+       
+
+        <%- include Partials/sidenav.ejs %>         
+       
+       
+       
+       
+       
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+
+                
+           
+
+
+
+
+
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">User ID</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white"><%-UserId %></h2>
+                                    <p class="text-white mb-0">your user ID</p>
+                             
+                                   </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Earnings</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white"><%- earnings  %> </h2>
+                                    <p class="text-white mb-0">in ETH</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Level</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white"><%- Level %></h2>
+                                    <p class="text-white mb-0">your current level</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Recomendation</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white"><%- recomendation %></h2>
+                                    
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+var date = new Date(parseInt(creationTime));
+%>
+
+
+               
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-widget">
+                            <div class="card-body gradient-3">
+                                <div class="media">
+                                    <span class="card-widget__icon"><i class="icon-home"></i></span>
+                                    <div class="media-body">
+                                        <h2 class="card-widget__title"><%-  date.getDate()  %>/<%-  date.getMonth()  %>/<%- date.getFullYear() %></h2>
+                                        <h5 class="card-widget__subtitle"><%- date.getHours() %>:<%- date.getMinutes() %>:<%- date.getSeconds() %></h5>                             
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="card card-widget">
+                            <div class="card-body gradient-4">
+                                <div class="media">
+                                    <span class="card-widget__icon"><i class="icon-tag"></i></span>
+                                    <div class="media-body">
+                                        <h2 class="card-widget__title"><%- total_Days%> </h2>
+                                        <h5 class="card-widget__subtitle">Total Days</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-content">
+                                 
+                                   <div class="stat-text">Wallet ID</div>
+                                <h4><%- user_address%></h4>
+                                </div>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar gradient-1" style="width: 1%;" role="progressbar"><span class="sr-only">50% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                
+
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="login-form-bg h-100">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100">
+                    <div class="col-xl-10">
+                        <div class="form-input-content">
+                            <div class="card login-form mb-0">
+                                <div class="card-body pt-5">
+
+                                    <h1 id="timmer" class="justify-content-center"></h1>
+            
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+    
+                                    
+                                   
+                                              <a href="/withdrawl" style="color: white;" class="btn login-form__btn submit w-100">Withdraw</a>
+                                 
+                                    <p class="mt-5 login-form__footer">you can windraw all or selected amount in <a href="/dashboard" class="text-primary">ETH</a> now</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>   <br>
+                
+ 
+    <div class="col-md-3">
+        <div class="card card-widget" style="height: 250px;">
+            <div class="card-body gradient-4">
+                <div class="media">
+                    <span class="card-widget__icon"><i class="icon-emotsmile"></i></span>
+                    <div class="media-body">
+                        <h2 class="card-widget__title"><%- total_Amount %></h2>
+                        <h5 class="card-widget__subtitle">Total Amount</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+<div class="col-md-3">
+        <div class="card card-widget" style="height: 250px;">
+            <div class="card-body gradient-9">
+                <div class="media">
+                    <span class="card-widget__icon"><i class="icon-ghost"></i></span>
+                    <div class="media-body">
+                        <h2 class="card-widget__title"><%- ref_Income %></h2>
+                        <h5 class="card-widget__subtitle">Referral Income</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+</div>
+<br>
+<br>
+
+         <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="stat-widget-one">
+                        <div class="stat-content">
+                         
+                           <div class="stat-text">RefferalLink</div>
+                        <h4>http://localhost:3000/payment?rid=<%- UserId%></h4>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar gradient-1" style="width: 100%;" role="progressbar"><span class="sr-only">50% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6">
+                <div class="card">
+                    <div class="card-body px-0">
+                        <h4 class="card-title px-4 mb-3">Todo</h4>
+                        <div class="todo-list">
+                            <div class="tdl-holder">
+                                <div class="tdl-content">
+                                    <ul id="todo_list">
+                                        <li><label><input type="checkbox"><i></i><span>Get up</span><a href='#' class="ti-trash"></a></label></li>
+                                        <li><label><input type="checkbox" checked><i></i><span>Stand up</span><a href='#' class="ti-trash"></a></label></li>
+                                        <li><label><input type="checkbox"><i></i><span>Don't give up the fight.</span><a href='#' class="ti-trash"></a></label></li>
+                                        <li><label><input type="checkbox" checked><i></i><span>Do something else</span><a href='#' class="ti-trash"></a></label></li>
+                                    </ul>
+                                </div>
+                                <div class="px-4">
+                                    <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+
+
+
+
+
+
+
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Transactions</h4>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero-configuration">
+                                    <thead>
+                                        <tr>
+                                            <th>Transactions Hash</th>
+                                            <th>Amount</th>
+                                            <th>BlockNumber</th>
+                                            <th>Date</th>
+                                             </tr>
+                                    </thead>
+                                  
+                                    <tbody>
+                                        <tr>
+                                            <td>0x609b4126a73329bcbcc8683e3f970b077be863c026ec5b9e413d907c805e97cd</td>
+                                            <td>0 Ether</td>
+                                            <td>6584698</td>
+                                            <td>May-31-2020</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td>0x2de0201f9c923da298261b26d926d3021f4d98130079fafe7cc7f28abd594570</td>
+                                            <td>0 Ether</td>
+                                            <td>6584684</td>
+                                            <td>May-31-2020</td>
+                                        
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Transactions Hash</th>
+                                            <th>Amount</th>
+                                            <th>BlockNumber</th>
+                                            <th>Date</th>
+                                     
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>    
+   
+    var creationTime = '<%- creationTime %>';
+creationTime = parseInt(creationTime ) ;
+creationTime += 70000 //adding 70secs 
+    // Set the date we're counting down to
+    var countDownDate = new Date(  creationTime  ).getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("timmer").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timmer").innerHTML = "Loading...";
+    
+     
+        if (window.ethereum) {
+    
+    try {
+      // Request account access if needed
+       ethereum.enable().then( res =>{
+        web3.eth.net.getNetworkType()
+      .then( res => {
+            if(res == 'rinkeby')
+                     {
+                        (async () => {
+     const accounts = await web3.eth.getAccounts();
+  
+     add_daily_income();
+ 
+   })();
+                     }
+                    
+                    });
+       });
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+     
+     
+     
+     
+     
+     
+       
+      }
+    }, 1000);
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function(){
+           $.getJSON('https://api.etherscan.io/api?module=account&action=txlistinternal&address=0x3DEa86e3170aB1e93Ff033CEe4Ae07bb19C75aB7&startblock=0&sort=asc&apikey=NCFHJ59DJ3U2UC8QHJ1JFDH3P44GPDNFQ5', function(data) {
+               //data is the JSON string        
+               data.result.forEach(element => {
+                 if(element.from.toLowerCase()==window.tokenAddress.toLowerCase())
+                 {
+                   console.log(123123213);   
+                 // var temp =   element.value;
+                 // temp /= Math.pow(10,18);  
+                   //totalval = totalval + temp; 
+                 }
+               })
+   
+           });
+   
+   
+   
+        });
+   </script>
+
+
+
+
+
+<%- include Partials/footer.ejs %> 
+
+
+<script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+<script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+       
+        <!--**********************************
+            Footer end-->
+
+
+</body>
+
+</html>
