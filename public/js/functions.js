@@ -21,6 +21,9 @@ debugger
  {
   main();
  }
+ else{
+   alert('switch to rinkeby')
+ }
 });
 
  
@@ -78,9 +81,12 @@ debugger
 
 function main()
 {
-    
   
-  window.tokenAddress = '0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582';
+  
+
+  window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
+//  window.tokenAddress = '0x9351f30e9C4e981e8ad6a87b19111F4811b3396f'; //final 1 min on 1st June
+ // window.tokenAddress = '0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582';
   //  window.tokenAddress = '0x51ff68F80948EeE367C8ef07E2380C2374F3008a'; //1min Aston final
    // window.tokenAddress = '0xB289ecc05597578E424c05DFd34dF15d48252167'; 1 min
     // window.tokenAddress = '0x4f726C854Eb45E3f7940E3480A5E247C72e075E5';
@@ -171,7 +177,7 @@ spinner();
         console.log(res);    
 if(res.isExist==true){
 
-
+debugger
      var data = {
   UserId:res.id,
   isExist:res.isExist,
@@ -183,7 +189,7 @@ if(res.isExist==true){
   total_Days : res.total_Days,
   total_Amount : web3.utils.fromWei(res.total_Amount),
   level:res.level,
-  ref_Income: web3.utils.fromWei(res.ref_Income)
+  ref_Income:  web3.utils.fromWei(res.ref_Income)
 }
 
 
@@ -208,6 +214,7 @@ saveData();
 }
 
 var saveData;
+var tree;
 $(document).ready(function(){
 
     
@@ -229,6 +236,13 @@ $(document).ready(function(){
              alert("Login Error");
            }});
        }
+
+
+       tree =function(data) {
+        $('#tree1').tree({
+            data: data
+        });
+    };
 });
 
 
@@ -332,7 +346,7 @@ function withDrawAmounts() {
 
   spinner();
 
-  tokenContract.methods.withDrawl(amount).send({from: user_address, gas: 210000}).once('transactionHash', function(hash){ 
+  tokenContract.methods.withDrawl().send({from: user_address, gas: 210000}).once('transactionHash', function(hash){ 
 
    })
   .once('receipt', function(receipt){ })
@@ -398,3 +412,253 @@ function spinner() {
 function stopSpinner() {
   document.getElementById("preloader").style.display = "none";
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ var downline = [];
+var temparr=[];
+
+
+var myJSON;
+var cc ;
+
+function togetdownline(address)
+{
+ functiToGetDownline(address); 
+ setTimeout( 
+    function(){
+  // (downline[0]['0x3DEa86e3170aB1e93Ff033CEe4Ae07bb19C75aB7'][0]) = (downline[1]); 
+   //console.log(downline);
+   // var arr = downline[0];
+   // downline.shift();
+
+var arry = [];
+var count=0;
+
+
+    for (var name in downline) {
+      if (downline.hasOwnProperty(name)) {
+      
+        if(count!=0)
+        {
+        temparr[name] =downline[name];
+        //console.log('asdsadas',temparr[name][name]);    
+        // 'hello'
+        }
+        else{
+          arry[name]=downline[name];
+                                                                                                                                                                                                                                                                                                                          }
+      } 
+     count++;
+    }
+
+    downline = null;
+    findtherightfit(arry);
+    debugger
+     myJSON = JSON.parse(JSON.stringify(arry)) 
+ 
+     if(myJSON!=null)
+     {
+        cc= myJSON;
+        console.log(cc);
+      
+        debugger
+        tree(cc)
+         //var myJSON = JSON.parse(myJSON);// console.log(obj);           
+         // root = obj;
+          
+          //console.log(root);
+     }
+      else{
+    //      console.log(myJSON);
+          alert('cannot create graph'); 
+      }      
+          stopSpinner();
+       //   update(myJSON);
+    
+    console.log("TREE-RESULT",myJSON);
+
+  
+    }
+  
+  
+
+  
+  
+  ,5000);
+
+ 
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+var current;
+var prevaddress;
+var globalcounter=0;
+var for_refferal=[];
+
+function functiToGetDownline(address){
+  
+
+  //console.log(downline);
+  tokenContract.methods.tree(address).call({from: user_address})
+  .then(res => {
+  
+    var len = res.length;
+    var obj = [];
+   if(len>0)
+   {
+    for(var l =0 ; l <len ; l++)
+    {
+        obj[l] = res[l] 
+    }
+      downline.push({name:address, children:obj});
+      for_refferal.push({name:address, children:obj});
+
+  //    globalcounter++;
+    for (i = 0; i < len; i++)
+    {
+      address = res[i];
+      functiToGetDownline(address)
+            
+    }
+   
+   }
+   else{
+    obj[address] = 0; 
+    downline.push( {name:address, children:0});
+    for_refferal.push( {name:address, children:0});
+
+  // globalcounter++;
+     return for_refferal;
+     
+   }
+   
+  
+
+  })
+
+
+
+}
+
+
+
+
+
+
+function findtherightfit(arry)
+{
+var temps = arry; 
+
+
+if(arry[0]){
+  
+for(var i = 0; i<arry[0].children.length; i++)
+{
+ // console.log('test',arry[0].children);
+
+  for(var p=1; p<temparr.length; p++)
+  {
+    
+      if(arry[0].children[i] == temparr[p].name)
+      {
+       // console.log('IN-IF');
+        arry[0].children[i] = {name:temparr[p].name, children:temparr[p].children};
+      }   
+      else{
+        //console.log('IN-ELSE');
+        if(temparr[p].children.length > 0)
+        {
+          //console.log('in-recurssion',temparr[p])
+          findtherightfit(temparr[p]);
+        }
+        else{
+          continue;
+        }
+          
+
+      }
+  }
+  //console.log('asdsad',arry[0].children[i]);
+} 
+}
+
+
+else{
+  for(var i = 0; i<arry.children.length; i++)
+{
+ // console.log('test',arry[0].children);
+
+  for(var p=1; p<temparr.length; p++)
+  {
+    
+      if(arry.children[i] == temparr[p].name)
+      {
+       // console.log('IN-IF');
+        arry.children[i] = {name:temparr[p].name,children: temparr[p].children};
+      }   
+      else{
+        //console.log('IN-ELSE');
+      //  if(temparr[p].children.length > 0)
+        //{
+          //console.log('in-recurssion',temparr[p])
+          //findtherightfit(temparr[p]);
+        //}
+        //else{
+          continue;
+        //}
+          
+
+      }
+  }
+  //console.log('asdsad',arry[0].children[i]);
+} 
+}
+
+//console.log(arry);
+//console.log(temparr);
+
+}
+  

@@ -2,6 +2,7 @@
 <html lang="en">
 
     <%- include Partials/head.ejs %>  
+    <link rel="stylesheet" href="css/jqtree.css">
 
 <body>
 
@@ -65,25 +66,17 @@
                                 <div class="form-input-content">
                                     <div class="card login-form mb-0">
                                         <div class="card-body pt-5">
-                                            <a class="text-center" href="index.html"> <h4>WithDrawl</h4></a>
+                                            <a class="text-center" href="index.html"> <h4>Refferals</h4></a>
                     
                                             <br>
                                             <br>
                                             <br>
-                                            <div class="input-group mb-3">
-                                                <input id="withdrawl_amount" type="number" class="form-control">
-                                                <div class="input-group-append">
-                                                    <button onclick="getallamount()" class="btn btn-outline-dark" type="button">Max</button>
-                                                </div>
-                                            </div>
+                                        
                                            
-            
+                                          <h5>  <div id="tree1"></div></h5>
                                             
                                            
-                                                      <button onclick="withDrawAmount()" class="btn login-form__btn submit w-100">Withdraw Amount</button>
-                                         
-                                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
-                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -93,49 +86,75 @@
                 </div>
             <!-- #/ container -->
         </div>
+   
         <!--**********************************
             Content body end
         ***********************************-->
         
-        
         <!--**********************************
             Footer start
         ***********************************-->
-        <%- include Partials/footer.ejs %> 
-        <!--********************************** 
-
+            <!--********************************** 
             Footer end-->
 
+<script>
+    var data;
 
 
-            <script>
+    var func;
 
-                function getallamount()
-                    {
-                        
-                        
-                         document.getElementById('withdrawl_amount').value = '<%- earnings %>';
+         
+    if (window.ethereum) {
+    
+    try {
+      // Request account access if needed
+      
+       ethereum.enable().then( res =>{
+        web3.eth.net.getNetworkType()
+      .then( res => {
+            if(res == 'rinkeby')
+                     {
+                        (async () => {
+     const accounts = await web3.eth.getAccounts();
   
-                        
-                    }
+     spinner(); 
+     togetdownline('<%- user_address %>');
+
+   })();
+                     }
+                    
+                    });
+       });
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 
-                    function withDrawAmount( )
-                    {
-                       // var amount = document.getElementById('withdrawl_amount').value;
 
-                        if( 0.05 > '<%- parseFloat(earnings) %>')
-                        {
-                            alert('your balance should be above 0.05')
-                            return
-                        }
-                        else{
-                           
-                            withDrawAmounts();
-                        }
-                                           }
-                
-            </script>
+
+
+
+
+
+</script>
+
+
+
+<script src="plugins/common/common.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/gleek.js"></script>
+        <script src="js/styleSwitcher.js"></script>
+        <script src="js/tree.jquery.js"></script>     
+   
+        
+        
+        
+        
+        
+  
 </body>
 
 </html>

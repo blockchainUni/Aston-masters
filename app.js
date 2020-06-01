@@ -14,6 +14,7 @@ var usersRouter = require('./routes/users');
 var logout = require('./routes/logout');
 var payment = require('./routes/payment');
 var withdrawl = require('./routes/withdrawl');
+var referrals = require('./routes/referrals');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/signup', signup);
 app.use('/logout',logout);
 app.use('/payment',payment);
 app.use('/withdrawl',withdrawl);
+app.use('/referrals',referrals);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -63,4 +65,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(PORT, `server started on port PORT`));

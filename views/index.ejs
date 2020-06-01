@@ -1,130 +1,315 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js1 lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js1 lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js1 lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js1" lang="en"> <!--<![endif]-->
 <head>
-	<meta charset="UTF-8">
-	<title>Aston</title>
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Raleway:300,400" rel="stylesheet">
-
-	<!-- CSS -->
-	<link href="css/style.css" rel="stylesheet"><style type="text/css">
-		body{
-		  font-family: 'Raleway', sans-serif;
-		  font-size: 14px;
-		  -webkit-font-smoothing: antialiased;
-		}
-
-		h1, h2, h3, h4, h5{
-			font-family: 'Montserrat', sans-serif;
-		}
-		a{
-			color: #000;
-		}
-		a:hover {
-		  text-decoration: none;
-		  color: #509cfa;
-		}
-
-		.banner{
-			height:100vh;
-		  padding: 200px 0;
-		  position: relative;
-		}
-
-		.overlay:before {
-		  content: '';
-		  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  right: 0;
-		  bottom: 0;
-		}
-
-		.banner h1{
-		  color: #FFF;
-		}
-
-		.banner h3{
-		  color: #FFF;
-		  opacity: .8;
-		  font-size:18px;
-		}
-
-		.banner p{
-		  color: #FFF;
-		  font-size: 24px;
-		  padding: 40px 0;
-		  font-weight: 300;
-		  width: 70%;
-		  margin: 0 auto;
-		}
-
-		.navbar-brand{
-		  color: #FFF;
-		}
-
-		.menu li a {
-		  padding:10px 20px!important;
-		  color: #FFF;
-		}
-
-		.btn-main-rounded{
-		  padding: 15px 40px;
-		  background: #509cfa;
-		  color: #fff;
-		  -webkit-border-radius: 100px;
-		  border-radius: 100px;
-		  font-weight: bold;
-		  letter-spacing: 1px;
-		}
-
-		.btn-main-rounded:hover{
-		  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.11);
-		  color: #FFF;
-		  transform: translate3d(0,-2px,0);
-		}
-
-		.navbar-brand:hover {
-			color:#fff;
-		}	
-	</style>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aston</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <!-- Pignose Calender -->
+<link rel="stylesheet" href="css1/font-awesome.min.css">
+<link rel="stylesheet" href="css1/themify-icons.css">
+<link rel="stylesheet" href="css1/elegant-font-icons.css">
+<link rel="stylesheet" href="css1/elegant-line-icons.css">
+<link rel="stylesheet" href="css1/bootstrap.min.css">
+<link rel="stylesheet" href="css1/slicknav.min.css">
+<link rel="stylesheet" href="css1/animate.min.css">
+<link rel="stylesheet" href="css1/owl.carousel.css">
+<link rel="stylesheet" href="css1/main.css">
+<link rel="stylesheet" href="css1/responsive.css">
+<script src="js1/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body>
-<!-- NavBar -->
-<nav class="navbar main-nav fixed-top navbar-expand-lg">
-  <div class="container">
-      <a class="navbar-brand" href="/" >Aston</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto menu">
-      	<li class="nav-item">
-          <a class="nav-link"  href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  href="/signup">SignUp</a>
-        </li>
-      </ul>
-      </div>
-  </div>
-</nav>
+<body data-spy="scroll" data-target="#navmenu" data-offset="70">
+<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<div id='preloader'>
+<div class='loader'>
 
-<!-- Banner -->
-<section class="banner bg-1 overlay">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<h1>Aston: One Time Investment</h1>
-				<h3>Easy Returns</h3>
-				<p>We have created this plateform just for you</p>
-				<a href="/Signup" class="btn btn-main-rounded">Get Started</a>
-			</div>
-		</div>
-	</div>
+</div>
+</div>
+
+
+<header id="header" class="header-section">
+<div class="container">
+<nav class="navbar">
+
+<a href="#" class="navbar-brand"><img src="images/logo.png"  height=60 width=40 alt="Enros"></a>
+
+<div class="d-flex menu-wrap">
+<div id="navmenu" class="mainmenu">
+<ul class="nav">
+<li><a data-scroll class="nav-link active" href="#home">Home <span class="sr-only">(current)</span></a></li>
+<li><a data-scroll class="nav-link" href="#services">Services</a></li>
+<li><a data-scroll class="nav-link" href="#about">About</a></li>
+<li><a data-scroll class="nav-link" href="#reviews">Review</a></li>
+
+<li><a href="/login" class="signup-btn">Login</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</header> 
+<section id="home" class="hero-section d-flex align-items-center">
+<div class="bg-shape"></div>
+<div class="container">
+<div class="row hero-wrap">
+<div class="col-md-6 xs-padding">
+<div class="hero-content">
+<h1>Invest in cryptocoin <br>easy way to trade bitcoin.</h1>
+<p>Launch your campaign and benefit from our expertise on designing and <br>managing conversion centered landing pages.</p>
+<a href="/signup" class="default-btn">Get Started Now</a>
+ </div>
+</div>
+<div class="col-md-6 xs-padding">
+<div class="hero-img">
+<img src="img1/hero-img.png" alt="Hero Img">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="services" class="services-section pd-bottom">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="service-content text-center">
+<img src="img1/icon-1.png" alt="icon">
+<h3>Bitcoin Transaction</h3>
+<p>Launch your campaign and benefit from our expertise on designing.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="service-content text-center">
+<img src="img1/icon-2.png" alt="icon">
+<h3>Instant Exchange</h3>
+<p>Launch your campaign and benefit from our expertise on designing.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="service-content text-center">
+<img src="img1/icon-3.png" alt="icon">
+<h3>Investment Banking</h3>
+<p>Launch your campaign and benefit from our expertise on designing.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="content-section pd-bottom">
+<div class="bg-shape"></div>
+<div class="container">
+<div class="row content-wrap align-items-center">
+<div class="col-md-6 sm-padding">
+<div class="content-details">
+<h2>We are leading international <br>digital currency agency</h2>
+<p>This should be used to tell a story and let your users know a little more about your product or service. How can you benefit them? convince them to use your service.</p>
+<ul class="content-list">
+<li>We Are Passionate And Creative</li>
+<li>Open Source And Free Software</li>
+<li>Very Fast And Reliable</li>
+</ul>
+<a href="#" class="default-btn">Learn More</a>
+</div>
+</div>
+<div class="col-md-6 sm-padding">
+<img src="img1/content-1.png" alt="image">
+</div>
+</div>
+</div>
+</section>
+<section class="work-process pd-bottom">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-sm-6 sm-padding">
+<div class="work-process-content text-center">
+<img src="img1/icon-4.png" alt="icon">
+<h3>Create Account</h3>
+</div>
+<div class="arrows"></div>
+</div>
+<div class="col-lg-3 col-sm-6 sm-padding">
+<div class="work-process-content text-center">
+<img src="img1/icon-5.png" alt="icon">
+<h3>Verify Account</h3>
+</div>
+<div class="arrows"></div>
+</div>
+<div class="col-lg-3 col-sm-6 sm-padding">
+<div class="work-process-content text-center">
+<img src="img1/icon-6.png" alt="icon">
+<h3>Make Identification</h3>
+</div>
+<div class="arrows"></div>
+</div>
+<div class="col-lg-3 col-sm-6 sm-padding">
+<div class="work-process-content text-center">
+<img src="img1/icon-2.png" alt="icon">
+<h3>Exchange crypto currency</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="content-section pd-bottom">
+<div class="container">
+<div class="row content-wrap align-items-center">
+<div class="col-md-6 sm-padding">
+<img src="img1/content-2.png" alt="image">
+</div>
+<div class="col-md-6 sm-padding">
+<div class="content-details">
+<h2>Banking platform that <br>enables currency solutions.</h2>
+<p>This should be used to tell a story and let your users know a little more about your product or service. How can you benefit them? convince them to use your service.</p>
+<a href="#" class="default-btn">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="reviews" class="testimonial-section pd-bottom">
+<div class="bg-shape"></div>
+<div class="container">
+<div class="section-heading text-center mb-40">
+<span>Reviews</span>
+<h2>What Our Clients Says</h2>
+</div>
+<div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
+<div class="testimonial-item">
+<div class="clients-thumb"><img src="img1/testi-1.jpg" alt="profile"></div>
+<div class="testi-content">
+<p>Mathematics as an expression of the human mind reflects the active will, the contemplative reason, and the desire for perfection</p>
+<h4>Angelina Rose <span>CEO Machanical Inc.</span></h4>
+</div>
+</div>
+<div class="testimonial-item">
+<div class="clients-thumb"><img src="img1/testi-2.jpg" alt="profile"></div>
+<div class="testi-content">
+<p>Mathematics as an expression of the human mind reflects the active will, the contemplative reason, and the desire for perfection</p>
+<h4>Michel Brown <span>CEO Industrial Inc.</span></h4>
+</div>
+</div>
+<div class="testimonial-item">
+<div class="clients-thumb"><img src="img1/testi-3.jpg" alt="profile"></div>
+<div class="testi-content">
+<p>Mathematics as an expression of the human mind reflects the active will, the contemplative reason, and the desire for perfection</p>
+<h4>Melania Trump <span>CEO Construction Inc.</span></h4>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-</body>
+<div class="sponsor-section padding">
+<div class="container">
+<ul id="sponsor-carousel" class="sponsor-carousel owl-carousel">
+<li class="sponsor-item">
+<img src="img1/partner1.jpg" alt="sponsor-image">
+</li>
+<li class="sponsor-item">
+<img src="img1/partner2.jpg" alt="sponsor-image">
+</li>
+<li class="sponsor-item">
+<img src="img1/partner3.jpg" alt="sponsor-image">
+</li>
+<li class="sponsor-item">
+<img src="img1/partner4.jpg" alt="sponsor-image">
+</li>
+<li class="sponsor-item">
+<img src="img1/partner5.jpg" alt="sponsor-image">
+</li>
+<li class="sponsor-item">
+<img src="img1/partner6.jpg" alt="sponsor-image">
+</li>
+</ul>
+</div>
+</div>
+<section class="subscribe-section pd-bottom">
+<div class="bg-shape"></div>
+<div class="container">
+<div class="row subscribe-wrap d-flex align-items-center">
+<div class="col-lg-6 xs-padding">
+<div>
+<h2>Newslatters Subscription</h2>
+<p>This should be used to tell a story and let your users know a little more about your product or service. </p>
+</div>
+</div>
+<div class="col-lg-6 xs-padding">
+<div class="subscribe-box clearfix">
+<div class="subscribe-form-wrap">
+<form action="#" class="subscribe-form">
+<input type="email" name="email" id="subs-email" class="form-input" placeholder="Enter Your Email Address...">
+<button type="submit" class="submit-btn">Subscribe</button>
+<div id="subscribe-result">
+<p class="subscription-success"></p>
+<p class="subscription-error"></p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="widget-section bd-bottom pd-bottom">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="widget-content">
+<img src="images/logo.png" alt="Brand" height=120 width =80>
+<p>This should be used to tell a story and let your users know a little more about your product or service.</p>
+<ul class="widget-social">
+<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa fa-behance"></i></a></li>
+<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="widget-content mid-content">
+<h3>Usefull Link</h3>
+<ul class="widget-link">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Pricing Plan</a></li>
+<li><a href="#">Terms & Condition</a></li>
+<li><a href="#">Privecy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 sm-padding">
+<div class="widget-content">
+<h3>Contact Us</h3>
+<ul class="widget-link">
+<li><i class="ti-location-pin"></i>NSTP NUST, Islamabad Pakistan</li>
+<li><i class="ti-email"></i><a href="/" class="__cf_email__" data-cfemail="e58c8b838a978884918c8a8ba58288848c89cb868a88">syedzainhasan@zaytrics.com</a></li>
+<li><i class="ti-headphone"></i>+92 (348) 560 45 07</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer-section align-center">
+<div class="container">
+<p>&copy; 2020 Aston Powered by <a href="http://www.zaytrics.com/" class="text-primary" >Zaytrics</a> </p>
+</div>
+</footer>
+<a data-scroll href="#header" id="scroll-to-top"><i class="arrow_carrot-up"></i></a>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js1/vendor/jquery-1.12.4.min.js"></script>
+<script src="js1/vendor/bootstrap.min.js"></script>
+<script src="js1/vendor/tether.min.js"></script>
+<script src="js1/vendor/jquery.slicknav.min.js"></script>
+<script src="js1/vendor/owl.carousel.min.js"></script>
+<script src="js1/vendor/smooth-scroll.min.js"></script>
+<script src="js1/vendor/jquery.ajaxchimp.min.js"></script>
+<script src="js1/vendor/wow.min.js"></script>
+<script src="js1/main.js"></script>
 </html>
-
