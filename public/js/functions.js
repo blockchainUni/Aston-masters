@@ -153,8 +153,19 @@ creationTime += 510000 //adding 70secs
       }
     }, 1000);
           }
+
+          if(window.location.pathname=='/referrals')
+          {
+            spinner(); 
+     togetdownline(user_address);
+          }
     }
     else{
+      if(window.location.pathname=='/referrals')
+      {
+        spinner(); 
+ togetdownline(user_address);
+      }
       if(window.location.pathname=='/dashboard')
         {
         

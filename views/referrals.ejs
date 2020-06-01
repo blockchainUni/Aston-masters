@@ -97,48 +97,6 @@
             <!--********************************** 
             Footer end-->
 
-<script>
-    var data;
-
-
-    var func;
-
-         
-    if (window.ethereum) {
-    
-    try {
-      // Request account access if needed
-      
-       ethereum.enable().then( res =>{
-        web3.eth.net.getNetworkType()
-      .then( res => {
-            if(res == 'rinkeby')
-                     {
-                        (async () => {
-     const accounts = await web3.eth.getAccounts();
-  
-     spinner(); 
-     togetdownline('<%- user_address %>');
-
-   })();
-                     }
-                    
-                    });
-       });
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-
-
-
-
-
-
-
-</script>
 
 
 
