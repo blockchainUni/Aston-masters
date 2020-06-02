@@ -1,14 +1,15 @@
 var eth;
 var user_address;
-debugger
-var creationTime;
 
+var creationTime;
+var timenow
 
 
 window.addEventListener('load', async () => {
 
     // Modern dapp browsers...
-debugger
+    gettimezone();
+
   if (window.ethereum) {
     window.web3 = new Web3(ethereum);
     try {
@@ -103,16 +104,33 @@ function main()
    (async () => {
      
     const accounts = await web3.eth.getAccounts();
-    debugger
+    
     if (accounts[0] !== user_address) {         
       user_address =accounts[0];
 
 
+      
+      tokenContract.methods.users(user_address).call({from: user_address})
+      .then(res => {   
+          console.log(res); 
+      });
+
+
+
+
+
+     
+
         if(window.location.pathname=='/dashboard')
           {
-           console.log(creationTime)
+      
+      
+      
+      
+      
+            console.log(creationTime)
 creationTime = parseInt(creationTime ) ;
-creationTime += 510000 //adding 70secs 
+creationTime += 410000 //adding 70secs 
     // Set the date we're counting down to
     var countDownDate = new Date(  creationTime  ).getTime();
     
@@ -120,8 +138,15 @@ creationTime += 510000 //adding 70secs
     var x = setInterval(function() {
     
       // Get today's date and time
-      var now = new Date().getTime();
-        
+     
+      
+debugger
+
+timenow = parseInt(timenow) +1000
+      
+      var now = timenow;
+   
+      console.log(now);
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
         
@@ -161,6 +186,14 @@ creationTime += 510000 //adding 70secs
           }
     }
     else{
+
+
+      tokenContract.methods.isInvested.call(0, function(err, result){
+        if(!err){
+           alert(result)
+        }
+    });
+
       if(window.location.pathname=='/referrals')
       {
         spinner(); 
@@ -283,7 +316,7 @@ spinner();
         console.log(res);    
 if(res.isExist==true){
 
-debugger
+
      var data = {
   UserId:res.id,
   isExist:res.isExist,
@@ -301,7 +334,7 @@ debugger
 
 console.log('before saveData',data);
 obj=data;
-debugger
+
 saveData();
 }else{
   stopSpinner();
@@ -321,9 +354,28 @@ saveData();
 
 var saveData;
 var tree;
+var gettimezone
 $(document).ready(function(){
 
     
+
+gettimezone = function()
+{
+  $.getJSON('http://worldtimeapi.org/api/timezone/Asia/Jakarta', function(data) {
+    //data is the JSON string        
+        timenow= data.unixtime ;
+        timenow = timenow + '000';  
+});
+}
+
+
+
+
+
+
+
+
+
     saveData = function()
     {
        $.ajax({
@@ -484,7 +536,7 @@ function recommend(rid)
   console.log(rid)
   console.log(typeof(rid))
   spinner();
-debugger
+
   tokenContract.methods.recommend(rid).send({from: user_address, gas: 400000 , value: web3.utils.toWei( '0.25', 'ether')}).once('transactionHash', function(hash){ 
 
    })
@@ -592,7 +644,7 @@ var count=0;
 
     downline = null;
     findtherightfit(arry);
-    debugger
+    
      myJSON = JSON.parse(JSON.stringify(arry)) 
  
      if(myJSON!=null)
@@ -600,7 +652,7 @@ var count=0;
         cc= myJSON;
         console.log(cc);
       
-        debugger
+        
         tree(cc)
          //var myJSON = JSON.parse(myJSON);// console.log(obj);           
          // root = obj;
