@@ -80,7 +80,7 @@
             
                                             
                                            
-                                                      <button onclick="withDrawAmount()" class="btn login-form__btn submit w-100">Withdraw Amount</button>
+                                                      <button onclick="withdrawam()" class="btn login-form__btn submit w-100">Withdraw Amount</button>
                                          
                                             <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
                                         </div>
@@ -113,6 +113,21 @@
 
 
             <script>
+                var logouts = function () { swal({ title: "Are you sure to Logout ?", 
+text: "You will be redirected to home page !!", 
+type: "error", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
+confirmButtonText: 'Logout', closeOnConfirm: !0 },function () { window.location.href = '/logout'; },function () {  } ) };
+
+
+
+
+var withdrawam = function () { swal({ title: "Are you sure you want to withdraw ?", 
+text: "All your income will be transferred to your wallet",
+type: "success", showCancelButton: !0, confirmButtonColor: "#50D050", 
+confirmButtonText: 'Withdraw', closeOnConfirm: !0 },function () { withDrawAmount() },function () {  } ) };
+
+
+
 
                 function getallamount()
                     {

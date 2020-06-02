@@ -103,7 +103,7 @@
                                                       <% } else { %>
                                 
                                 
-                                                  <button onclick="expire()" class="btn login-form__btn submit w-100">Expire User</button>
+                                                  <button onclick="a()" class="btn login-form__btn submit w-100">Expire User</button>
    
                                                   <p class="mt-5 login-form__footer">You wont be able to withdraw your current income after expire. If you have any <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
                                        
@@ -133,6 +133,7 @@
             Footer start
         ***********************************-->
         <%- include Partials/footer.ejs %> 
+        
         <!--********************************** 
 
             Footer end-->
@@ -141,7 +142,30 @@
 
             <script>
 
-                function getallamount()
+
+
+
+
+
+var a  = function () { swal({ title: "Are you sure to Expire ?", 
+text: "You will not be able to recover any previous earnings !!", 
+type: "warning", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
+confirmButtonText: 'Expire', closeOnConfirm: !0 },function () { expire() },function () {  } ) };
+
+
+
+
+
+var logouts = function () { swal({ title: "Are you sure to Logout ?", 
+text: "You will be redirected to home page !!", 
+type: "error", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
+confirmButtonText: 'Logout', closeOnConfirm: !0 },function () { window.location.href = '/logout'; },function () {  } ) };
+
+
+
+
+
+function getallamount()
                     {
                         
                         

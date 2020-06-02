@@ -385,6 +385,13 @@ var date = new Date(parseInt(creationTime));
 <script>    
    
 
+   var logouts = function () { swal({ title: "Are you sure to Logout ?", 
+text: "You will be redirected to home page !!", 
+type: "error", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
+confirmButtonText: 'Logout', closeOnConfirm: !0 },function () { window.location.href = '/logout'; },function () {  } ) };
+
+
+
         $(document).ready(function(){
            $.getJSON('https://api.etherscan.io/api?module=account&action=txlistinternal&address=0x3DEa86e3170aB1e93Ff033CEe4Ae07bb19C75aB7&startblock=0&sort=asc&apikey=NCFHJ59DJ3U2UC8QHJ1JFDH3P44GPDNFQ5', function(data) {
                //data is the JSON string        
