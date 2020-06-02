@@ -85,8 +85,8 @@ function main()
 {
   
   
-
-  window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
+window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
+  //window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
 //  window.tokenAddress = '0x9351f30e9C4e981e8ad6a87b19111F4811b3396f'; //final 1 min on 1st June
  // window.tokenAddress = '0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582';
   //  window.tokenAddress = '0x51ff68F80948EeE367C8ef07E2380C2374F3008a'; //1min Aston final
