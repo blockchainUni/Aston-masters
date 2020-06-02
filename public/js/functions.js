@@ -848,7 +848,8 @@ function reinvest()
       alert('Invest Complete')
       login();
       
-    });
+    }
+    );
 
 
 
