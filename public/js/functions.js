@@ -478,7 +478,7 @@ function add_daily_income() {
   .on('error', function(error){
     stopSpinner();
     alert('Transaction not complete')
-    login();
+   
    })
   .then(function(receipt){
   stopSpinner();
