@@ -65,24 +65,58 @@
                                 <div class="form-input-content">
                                     <div class="card login-form mb-0">
                                         <div class="card-body pt-5">
-                                            <a class="text-center" href="index.html"> <h4>WithDrawl</h4></a>
+                                            <a class="text-center" href="index.html"> <h4>Reinvest</h4></a>
                     
                                             <br>
                                             <br>
                                             <br>
-                                            <div class="input-group mb-3">
-                                                <input id="withdrawl_amount" type="number" class="form-control">
-                                                <div class="input-group-append">
-                                                    <button onclick="getallamount()" class="btn btn-outline-dark" type="button">Max</button>
-                                                </div>
-                                            </div>
-                                           
-            
+
+
+
                                             
-                                           
-                                                      <button onclick="withDrawAmount()" class="btn login-form__btn submit w-100">Withdraw Amount</button>
+<% if(expirePeriod == 'true') { %>
+
+                                            <div class="form-group">
+                                                <label>Select Amount:</label>
+
+                                                  <% if (visit == 1) {%>
+
+                                                <select class="form-control" id="sel1">
+                                                    <option>0.25</option>
+                                                    <option>0.50</option>
+                                                  </select>
+                                            
+                                            <% } %>
+                                            
+
+                                            <% if (visit >= 2) {%>
+
+                                                <select class="form-control" id="sel1">
+                                                    <option>0.25</option>
+                                                    <option>0.50</option>
+                                                    <option>0.75</option>
+                                                  </select>
+                                            
+                                            <% } %>
+                                            
+                                                </div>
+                                                      <button onclick="reinvest()" class="btn login-form__btn submit w-100">Reinvest</button>
+                                                      <p class="mt-5 login-form__footer">More Investment means more results!</p>
+                                       
+                                                      <% } else { %>
+                                
+                                
+                                                  <button onclick="expire()" class="btn login-form__btn submit w-100">Expire User</button>
+   
+                                                  <p class="mt-5 login-form__footer">You wont be able to withdraw your current income after expire. If you have any <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
+                                       
+
+
+<% } %>
+
+
+
                                          
-                                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/dashboard" class="text-primary">Go</a> to dashboard now</p>
                                         </div>
                                     </div>
                                 </div>

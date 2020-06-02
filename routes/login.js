@@ -24,6 +24,8 @@ router.get('/', function(req, res, next) {
     req.session.total_Amount = req.query.total_Amount;
     req.session.level = req.query.level;
     req.session.ref_Income = req.query.ref_Income;
+    req.session.expirePeriod = req.query.expirePeriod;
+    req.session.visit= req.query.visit;
    
     if(req.session.UserId)
   {

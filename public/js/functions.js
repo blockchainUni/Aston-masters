@@ -328,7 +328,9 @@ if(res.isExist==true){
   total_Days : res.total_Days,
   total_Amount : web3.utils.fromWei(res.total_Amount),
   level:res.level,
-  ref_Income:  web3.utils.fromWei(res.ref_Income)
+  ref_Income:  web3.utils.fromWei(res.ref_Income),
+  expirePeriod : res.expirePeriod,
+  visit: parseInt(res.visit)
 }
 
 
@@ -820,3 +822,61 @@ else{
 
 }
   
+
+
+
+function reinvest()
+{
+  var value = document.getElementById('sel1').value;
+
+
+
+  spinner();
+
+  tokenContract.methods.reinvest().send({ from: user_address, gas: 400000,value: web3.utils.toWei( value, 'ether') }).once('transactionHash', function(hash){ 
+    console.log(1)
+     })
+    .once('receipt', function(receipt){  console.log(2)})
+    .on('confirmation', function(confNumber, receipt){ console.log(3) })
+    .on('error', function(error){
+      stopSpinner();
+      alert('Could Not ReInvest')
+     })
+    .then(function(receipt){
+       
+      stopSpinner();
+      alert('Invest Complete')
+      login();
+      
+    });
+
+
+
+
+
+}
+
+
+
+function expire(){
+
+  tokenContract.methods.expire().send({ from: user_address, gas: 400000 }).once('transactionHash', function(hash){ 
+    console.log(1)
+     })
+    .once('receipt', function(receipt){  console.log(2)})
+    .on('confirmation', function(confNumber, receipt){ console.log(3) })
+    .on('error', function(error){
+      stopSpinner();
+      alert('Could Not Expire User')
+     })
+    .then(function(receipt){
+       
+      stopSpinner();
+      alert('User Expired')
+      login();
+      
+    });
+
+
+
+}
