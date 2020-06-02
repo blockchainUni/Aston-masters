@@ -109,7 +109,7 @@ window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
       user_address =accounts[0];
 
 
-      
+      console.log(user_address)
       tokenContract.methods.users(user_address).call({from: user_address})
       .then(res => {   
           console.log(res); 
