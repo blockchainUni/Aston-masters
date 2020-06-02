@@ -416,7 +416,7 @@ function invest()
   
   spinner();
 
-  tokenContract.methods.invest().send({ from: user_address, gas: 210000,value: web3.utils.toWei( '0.25', 'ether') }).once('transactionHash', function(hash){ 
+  tokenContract.methods.invest().send({ from: user_address, gas: 400000,value: web3.utils.toWei( '0.25', 'ether') }).once('transactionHash', function(hash){ 
     console.log(1)
      })
     .once('receipt', function(receipt){  console.log(2)})
@@ -468,7 +468,7 @@ function add_daily_income() {
 
 
   spinner();
-  tokenContract.methods.Add_daily_Income().send({ from: user_address, gas: 210000 }).once('transactionHash', function(hash){ 
+  tokenContract.methods.Add_daily_Income().send({ from: user_address, gas: 400000 }).once('transactionHash', function(hash){ 
   console.log(1)
    })
   .once('receipt', function(receipt){  console.log(2)})
@@ -504,7 +504,7 @@ function withDrawAmounts() {
 
   spinner();
 
-  tokenContract.methods.withDrawl().send({from: user_address, gas: 210000}).once('transactionHash', function(hash){ 
+  tokenContract.methods.withDrawl().send({from: user_address, gas: 400000}).once('transactionHash', function(hash){ 
 
    })
   .once('receipt', function(receipt){ })
