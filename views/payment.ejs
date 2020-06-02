@@ -37,6 +37,100 @@
                             <div class="card-body pt-5">
                                 <h4 class="card-title">Payment</h4>
              
+
+
+
+                                <% if(expirePeriod == 'true') { %>
+
+
+                                    <ul class="nav nav-pills mb-3">
+                                        <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Reinvest</a>
+                                        </li>
+                                    
+                                            </ul>
+                                    <div class="tab-content br-n pn">
+                                        <div id="navpills-1" class="tab-pane active">
+                                            <div class="row align-items-center">
+                                                <div class="col-sm-6 col-md-4 col-xl-2">
+                                                    <img src="images/logo.png" alt="" class="img-fluid thumbnail m-r-15">
+                                                </div>
+                                                <div class="col-sm-6 col-md-8 col-xl-10">                   
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                          
+                                                    <div class="form-group">
+                                                        <label>Select Amount:</label>
+        
+                                                          <% if (visit == 1) {%>
+        
+                                                        <select class="form-control" id="sel1">
+                                                            <option>0.25</option>
+                                                            <option>0.50</option>
+                                                          </select>                          
+                                                    <% } %>
+                                                    <% if (visit >= 2) {%>
+        
+                                                        <select class="form-control" id="sel1">
+                                                            <option>0.25</option>
+                                                            <option>0.50</option>
+                                                            <option>0.75</option>
+                                                          </select>
+                                                    
+                                                    <% } %>
+                                                    
+                                                        </div>
+                                                              <button onclick="reinvest()" class="btn login-form__btn submit w-100">Reinvest</button>
+                                                              <p class="mt-5 login-form__footer">More Investment means more results!</p>
+                                                    
+                                                  
+                                         
+                                                
+
+                                                </div>
+                        
+                        
+                        
+                        
+                                            </div>
+                                        </div>
+                         
+                                      
+                                        <br>
+                                        <br>
+                                        
+                                        <br>
+                                        <br>
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                    </div>
+
+
+
+                                    
+                                    <% } else { %>
+
+
+
+
+                                       
             <ul class="nav nav-pills mb-3">
                 <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Recommendation</a>
                 </li>
@@ -50,13 +144,10 @@
                         <div class="col-sm-6 col-md-4 col-xl-2">
                             <img src="images/logo.png" alt="" class="img-fluid thumbnail m-r-15">
                         </div>
-                        <div class="col-sm-6 col-md-8 col-xl-10">
-                            
+                        <div class="col-sm-6 col-md-8 col-xl-10">                   
                             <br>
                             <br>
                             <br>
-
-
                             <% if(locals.rid) { %>
 
                             <div class="form-group">
@@ -79,6 +170,10 @@
                             <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/logout" class="text-primary">logout now</a></p>
                                    
                         </div>
+
+
+
+
                     </div>
                 </div>
                 <div id="navpills-2" class="tab-pane">
@@ -108,7 +203,34 @@
                 
                 <br>
                 <br>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
             </div>
+        
+            <% } %>
+        
+
+
+
+
+        
         </div>
     </div>
 </div>

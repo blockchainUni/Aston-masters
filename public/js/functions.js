@@ -833,7 +833,7 @@ function reinvest()
 
   spinner();
 
-  tokenContract.methods.reinvest().send({ from: user_address, gas: 400000,value: web3.utils.toWei( value, 'ether') }).once('transactionHash', function(hash){ 
+  tokenContract.methods.ReInvest().send({ from: user_address, gas: 400000,value: web3.utils.toWei( value, 'ether') }).once('transactionHash', function(hash){ 
     console.log(1)
      })
     .once('receipt', function(receipt){  console.log(2)})
@@ -872,7 +872,7 @@ function expire(){
     .then(function(receipt){
        
       stopSpinner();
-      alert('User Expired')
+      alert('User')
       login();
       
     });
