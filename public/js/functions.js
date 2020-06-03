@@ -8,6 +8,7 @@ var timenow
 window.addEventListener('load', async () => {
 
     // Modern dapp browsers...
+    
     gettimezone();
 
   if (window.ethereum) {
@@ -317,6 +318,8 @@ spinner();
 if(res.isExist==true){
 
 
+
+
      var data = {
   UserId:res.id,
   isExist:res.isExist,
@@ -324,7 +327,7 @@ if(res.isExist==true){
   isRecommended : res.isRecomended,
   earnings: web3.utils.fromWei(res.earning),
   recomendation : res.recomendation,
-  creationTime : parseInt(res.creationTime+'000'),
+  creationTime : parseInt(timenow),
   total_Days : res.total_Days,
   total_Amount : web3.utils.fromWei(res.total_Amount),
   level:res.level,
@@ -334,7 +337,10 @@ if(res.isExist==true){
 }
 
 
+
+
 console.log('before saveData',data);
+debugger
 obj=data;
 
 saveData();
