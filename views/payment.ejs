@@ -42,7 +42,7 @@
 
 
                                 <% if(expirePeriod == 'true' && visit != 0) { %>
-                                    <h4 class="card-title">To continue your income or benefits, please revest.</h4>
+                                    <h4 class="card-title">Please withdraw your earnings from the contract and reinvest to continue.</h4>
              
 
 
@@ -57,6 +57,19 @@
                                                     <br>
                                                     <br>
                                           
+
+                                                    <h4> Your Earnings:
+                                                        <%- earnings %></h4>
+                                                        <br>
+                                                        <br>
+                                                        <button onclick="withDrawAmounts()" class="btn login-form__btn submit w-100">WithDraw</button>
+                                                        <p class="mt-5 login-form__footer">
+
+                                                            To continue your income or benefits, please revest.You have earned 4x of your investment or your 400 contract days has expired
+                                                        </p>
+                                             
+                                                        <br>
+                                                        <br>
                                                     <div class="form-group">
                                                         <label>Select Amount:</label>
         
@@ -79,9 +92,11 @@
                                                     
                                                         </div>
                                                               <button onclick="reinvest()" class="btn login-form__btn submit w-100">Reinvest</button>
-                                                              <p class="mt-5 login-form__footer">You have earned 4x of your investment or your 400 contract days has expired</p>
-                                                    
-                                                  
+                                                            
+                                                     
+                                                            
+                                                             
+                                                           
                                          
                                                 
 
@@ -244,14 +259,9 @@
 </div>
 </div>
 
-<script>
-    var logouts = function () { swal({ title: "Are you sure to Logout ?", 
-text: "You will be redirected to home page !!", 
-type: "error", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
-confirmButtonText: 'Logout', closeOnConfirm: !0 },function () { window.location.href = '/logout'; },function () {  } ) };
+<%- include Partials/logout_popup.ejs %>     
 
 
-</script>
 
 <script>
 

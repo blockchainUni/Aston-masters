@@ -375,7 +375,7 @@ var date = new Date(parseInt(creationTime));
 
 
 
-       
+        <%- include Partials/logout_popup.ejs %>     
 
 
 
@@ -384,11 +384,6 @@ var date = new Date(parseInt(creationTime));
 
 <script>    
    
-
-   var logouts = function () { swal({ title: "Are you sure to Logout ?", 
-text: "You will be redirected to home page !!", 
-type: "error", showCancelButton: !0, confirmButtonColor: "#DD6B55", 
-confirmButtonText: 'Logout', closeOnConfirm: !0 },function () { window.location.href = '/logout'; },function () {  } ) };
 
 
 

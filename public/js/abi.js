@@ -445,19 +445,30 @@ const tokenABI =[
 				"internalType": "uint256",
 				"name": "ref_Income",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "total_Withdraw",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
 		"name": "withDrawl",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "string",
 				"name": "",
-				"type": "bool"
+				"type": "string"
 			}
 		],
 		"stateMutability": "payable",

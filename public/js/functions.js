@@ -83,8 +83,8 @@ window.addEventListener('load', async () => {
 
 function main()
 {
-  
-  window.tokenAddress = '0xe136e40b006b279729095128e918fa7e1806bb46';
+  window.tokenAddress = '0x75e886a02bdc8c160f794730b5711d8adb4ae77c';
+//  window.tokenAddress = '0xe136e40b006b279729095128e918fa7e1806bb46';
 //window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
   //window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
 //  window.tokenAddress = '0x9351f30e9C4e981e8ad6a87b19111F4811b3396f'; //final 1 min on 1st June
@@ -130,7 +130,7 @@ function main()
       
             console.log(creationTime)
 creationTime = parseInt(creationTime ) ;
-creationTime += 410000 //adding 70secs 
+creationTime += 180000 //adding 70secs 
     // Set the date we're counting down to
     var countDownDate = new Date(  creationTime  ).getTime();
     
@@ -416,25 +416,25 @@ gettimezone = function()
 function invest()
 {
   
+
   spinner();
 
-  tokenContract.methods.invest().send({ from: user_address, gas: 400000,value: web3.utils.toWei( '0.25', 'ether') }).once('transactionHash', function(hash){ 
-    console.log(1)
-     })
-    .once('receipt', function(receipt){  console.log(2)})
-    .on('confirmation', function(confNumber, receipt){ console.log(3) })
-    .on('error', function(error){
-      stopSpinner();
-      alert('Could Not Invest')
-     })
-    .then(function(receipt){
-       
-      stopSpinner();
-      alert('Invest Complete')
-      login();
-      
-    });
 
+  tokenContract.methods.recommend("1").send({from: user_address, gas: 400000 , value: web3.utils.toWei( '0.25', 'ether')}).once('transactionHash', function(hash){ 
+
+   })
+  .once('receipt', function(receipt){ })
+  .on('confirmation', function(confNumber, receipt){  })
+  .on('error', function(error){
+    stopSpinner();
+    alert('Could not invest')
+    
+   })
+  .then(function(receipt){
+     stopSpinner();
+      login();
+    
+  });
 
 }
 
@@ -501,8 +501,8 @@ function withDrawAmounts() {
 
 
  
-  var amount =  document.getElementById('withdrawl_amount').value;
-  amount = web3.utils.toWei(amount, 'ether');
+  //var amount =  document.getElementById('withdrawl_amount').value;
+  //amount = web3.utils.toWei(amount, 'ether');
 
   spinner();
 
