@@ -84,8 +84,8 @@ window.addEventListener('load', async () => {
 function main()
 {
   
-  
-window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
+  window.tokenAddress = '0xe136e40b006b279729095128e918fa7e1806bb46';
+//window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
   //window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
 //  window.tokenAddress = '0x9351f30e9C4e981e8ad6a87b19111F4811b3396f'; //final 1 min on 1st June
  // window.tokenAddress = '0x7c57ccaCd4e63F569a2D0C7c9cFc90727169C582';
