@@ -145,7 +145,7 @@ creationTime += 180000 //adding 70secs
      
       
 debugger
-
+var dates = new Date();
 timenow = parseInt(timenow) +1000
       
       var now = timenow;
@@ -328,7 +328,7 @@ if(res.isExist==true){
   isExist:res.isExist,
   user_address:user_address,
   isRecommended : res.isRecomended,
-  earnings: web3.utils.fromWei(res.earning),
+  earnings: parseFloat(web3.utils.fromWei(res.earning)),
   recomendation : res.recomendation,
   creationTime :  parseInt(res.creationTime + '000'),
   total_Days : res.total_Days,
@@ -398,7 +398,9 @@ gettimezone = function()
              //  stopSpinner();
              console.log(obj);
              stopSpinner();
+
                window.location.replace('/dashboard');
+               
            },
            error:function(){
              stopSpinner();

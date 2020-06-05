@@ -141,7 +141,7 @@
 
 
 <%
-var date = new Date();
+var dates = new Date(parseInt(creationTime));
 %>
 
 
@@ -153,8 +153,8 @@ var date = new Date();
                                 <div class="media">
                                     <span class="card-widget__icon"><i class="icon-home"></i></span>
                                     <div class="media-body">
-                                        <h2 class="card-widget__title"><%-  date.getDate()  %>/<%-  date.getMonth()  %>/<%- date.getFullYear() %></h2>
-                                        <h5 class="card-widget__subtitle"><%- date.getHours() %>:<%- date.getMinutes() %>:<%- date.getSeconds() %></h5>                             
+                                        <h2 class="card-widget__title"><%-  dates.getDay()  %>/<%-  dates.getUTCMonth()  %>/<%- dates.getFullYear() %></h2>
+                                        <h5 class="card-widget__subtitle"><%- dates.getHours() %>:<%- dates.getMinutes() %>:<%- dates.getSeconds() %></h5>                             
                                     </div>
                                 </div>
                             </div>
