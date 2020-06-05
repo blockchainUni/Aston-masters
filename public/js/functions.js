@@ -2,7 +2,8 @@ var eth;
 var user_address;
 
 var creationTime;
-var timenow
+var timenow;
+var period;
 
 
 window.addEventListener('load', async () => {
@@ -125,7 +126,7 @@ function main()
 
      
 
-        if(window.location.pathname=='/dashboard')
+        if(window.location.pathname=='/dashboard' && (period== 'false'))
           {
       
       
@@ -203,7 +204,7 @@ timenow = parseInt(timenow) +1000
         spinner(); 
  togetdownline(user_address);
       }
-      if(window.location.pathname=='/dashboard')
+      if(window.location.pathname=='/dashboard'  && (period == 'false'))
         {
         
 creationTime = parseInt(creationTime ) ;

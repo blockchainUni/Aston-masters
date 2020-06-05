@@ -64,6 +64,7 @@
          <script>
              debugger
                 creationTime = '<%- creationTime %>';
+                period =  '<%- expirePeriod  %>';
          </script>  
 
 
@@ -142,6 +143,7 @@
 
 <%
 var dates = new Date(parseInt(creationTime));
+
 %>
 
 
@@ -375,8 +377,13 @@ var dates = new Date(parseInt(creationTime));
 
 
 
+       
+
         <%- include Partials/logout_popup.ejs %>     
 
+
+
+ 
 
 
 
@@ -436,6 +443,32 @@ var dates = new Date(parseInt(creationTime));
         <!--**********************************
             Footer end-->
 
+
+
+
+            <script>
+            
+          
+
+                function ssss () 
+                        { swal({ title: "Your contract has expired", 
+                text: "Withdraw amount then please Reinvest", 
+                type: "error", confirmButtonColor: "#ff4d4d", 
+                 } ) };
+                
+                
+                 console.log('asdsa',period)
+                
+                 if(period == 'true'){ssss();}
+                
+                
+                
+                
+                
+                
+                
+                          
+                            </script>
 
 </body>
 
