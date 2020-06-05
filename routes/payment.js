@@ -8,8 +8,9 @@ router.get('/', function(req, res, next) {
 
   if(req.session.isExist)
   {
+    
 
-    if(req.session.creationTime != 0)
+    if(req.session.creationTime  != 0 && req.session.expirePeriod != true)
     res.redirect('/dashboard');
     else
    {

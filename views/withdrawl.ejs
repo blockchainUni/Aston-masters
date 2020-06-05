@@ -113,8 +113,9 @@
 
             <%- include Partials/logout_popup.ejs %>     
 
-
+          
             <script>
+
 var withdrawam = function () { swal({ title: "Are you sure you want to withdraw ?", 
 text: "All your income will be transferred to your wallet",
 type: "success", showCancelButton: !0, confirmButtonColor: "#50D050", 
@@ -122,13 +123,20 @@ confirmButtonText: 'Ok', closeOnConfirm: !0 },function () { withDrawAmount() },f
 
 
 
+window.addEventListener('load', async () => {
+    document.getElementById('withdrawl_amount').value = '<%- earnings %>';
+  
+
+console.log(typeof('<%- earnings %>'));
+
+});
+
+
 
                 function getallamount()
                     {
                         
-                        
                          document.getElementById('withdrawl_amount').value = '<%- earnings %>';
-  
                         
                     }
 
@@ -144,7 +152,7 @@ confirmButtonText: 'Ok', closeOnConfirm: !0 },function () { withDrawAmount() },f
                         }
                         else{
                            
-                            withDrawAmounts();
+                            withDrawAmounts('<%- earnings %>');
                         }
                                            }
                 

@@ -62,7 +62,7 @@
                                                         <%- earnings %></h4>
                                                         <br>
                                                         <br>
-                                                        <button onclick="withDrawAmounts()" class="btn login-form__btn submit w-100">WithDraw</button>
+                                                        <button onclick="withDrawAmounts('<%- earnings %>')" class="btn login-form__btn submit w-100" style="background-color: purple;">WithDraw</button>
                                                         <p class="mt-5 login-form__footer">
 
                                                             To continue your income or benefits, please revest.You have earned 4x of your investment or your 400 contract days has expired
@@ -146,10 +146,10 @@
              
                                        
             <ul class="nav nav-pills mb-3">
-                <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Recommendation</a>
+                <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab"  style="background-color: purple;" aria-expanded="false">Recommendation</a>
                 </li>
             
-                <li class="nav-item"><a href="#navpills-2" class="nav-link " data-toggle="tab" aria-expanded="false">Investment</a>
+                <li class="nav-item"><a href="#navpills-2" class="nav-link " data-toggle="tab" style="background-color: purple;"  aria-expanded="false">Investment</a>
                 </li>
                  </ul>
             <div class="tab-content br-n pn">
@@ -167,7 +167,7 @@
                             <div class="form-group">
                                 <input  type="text" class="form-control" value="<%- rid %>">
                             </div>
-                            <button onclick="recommend('<%- rid %>')" class="btn login-form__btn submit w-100">Register</button>
+                            <button onclick="recommend('<%- rid %>')" class="btn login-form__btn submit w-100" style="background-color: purple;color: white;" >Register</button>
                        
                             <% }else{ %>
 
@@ -175,13 +175,13 @@
                                     <input id="reco" type="text" class="form-control" placeholder="Referral Link">
                                 </div>
                         
-                                <button onclick="recommended()" class="btn login-form__btn submit w-100">Register</button>
+                                <button onclick="recommended()" class="btn login-form__btn submit w-100" style="background-color: purple;color: white;">Register</button>
                        
                                 <% } %>
 
                             
                           
-                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/logout" class="text-primary">logout now</a></p>
+                            <p class="mt-5 login-form__footer">Dont have any earnings yet? <a href="/logout" style="color:purple;" >logout now</a></p>
                                    
                         </div>
 
@@ -202,7 +202,7 @@
                             <br>
                             <br>
                             <p>If you dont have any referral code or referral ID then press Invest to Progress forward</p>
-                            <button onclick="invest()" class="btn login-form__btn submit w-100">Invest</button>    
+                            <button onclick="invest()" style="background-color: purple;" class="btn login-form__btn submit w-100">Invest</button>    
                         </div>
 
                               

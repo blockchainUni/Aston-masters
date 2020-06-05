@@ -84,7 +84,10 @@ window.addEventListener('load', async () => {
 
 function main()
 {
-  window.tokenAddress = '0x75e886a02bdc8c160f794730b5711d8adb4ae77c';
+  window.tokenAddress = '0xa0d0304979ad577a24d1a7c8cad81890d126c3e2';
+  // window.tokenAddress = '0x5f87fabff89460178efdc73fe8bc27b2d348991d';
+  //window.tokenAddress = '0xc245f8778d72db57ad5f1489f02cb2607628a57b';
+  //window.tokenAddress = '0x75e886a02bdc8c160f794730b5711d8adb4ae77c';
 //  window.tokenAddress = '0xe136e40b006b279729095128e918fa7e1806bb46';
 //window.tokenAddress = '0xF29aa34099729baa98b17C8FD5b8c11d8d00B9b1';
   //window.tokenAddress = '0x5dd6db74e3ae0da89fdc73c59dcb4c96f20f4559'; //final 1 min with tree 
@@ -327,12 +330,12 @@ if(res.isExist==true){
   isRecommended : res.isRecomended,
   earnings: web3.utils.fromWei(res.earning),
   recomendation : res.recomendation,
-  creationTime : parseInt(timenow),
+  creationTime :  parseInt(res.creationTime + '000'),
   total_Days : res.total_Days,
   total_Amount : web3.utils.fromWei(res.total_Amount),
   level:res.level,
   ref_Income:  web3.utils.fromWei(res.ref_Income),
-  expirePeriod : res.expirePeriod,
+  expirePeriod : res.expirePeriod ,
   visit: parseInt(res.visit)
 }
 
@@ -503,16 +506,19 @@ function add_daily_income() {
 
 
 
-function withDrawAmounts() {
+function withDrawAmounts(amount) {
 
 
  
-  //var amount =  document.getElementById('withdrawl_amount').value;
-  //amount = web3.utils.toWei(amount, 'ether');
 
+  amount = web3.utils.toWei(amount, 'ether');
+console.log(amount);
+  
   spinner();
 
-  tokenContract.methods.withDrawl().send({from: user_address, gas: 400000}).once('transactionHash', function(hash){ 
+
+
+  tokenContract.methods.withDrawl(amount).send({from: user_address, gas: 400000}).once('transactionHash', function(hash){ 
 
    })
   .once('receipt', function(receipt){ })
