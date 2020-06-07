@@ -164,7 +164,7 @@ timenow = parseInt(timenow) +1000
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
       // Output the result in an element with id="demo"
-      document.getElementById("timmer").innerHTML = days + "d " + hours + "h "
+      document.getElementById("timmer").innerHTML = hours + "h "
       + minutes + "m " + seconds + "s ";
         
       // If the count down is over, write some text 
@@ -230,7 +230,7 @@ creationTime += 86400000 //adding 70secs
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
       // Output the result in an element with id="demo"
-      document.getElementById("timmer").innerHTML = days + "d " + hours + "h "
+      document.getElementById("timmer").innerHTML = hours + "h "
       + minutes + "m " + seconds + "s ";
         
       // If the count down is over, write some text 
