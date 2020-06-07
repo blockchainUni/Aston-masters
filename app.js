@@ -16,6 +16,7 @@ var payment = require('./routes/payment');
 var withdrawl = require('./routes/withdrawl');
 var referrals = require('./routes/referrals');
 var reinvest = require('./routes/reinvest');
+var transactions = require('./routes/transactions');
 var app = express();
 
 // view engine setup
@@ -49,6 +50,7 @@ app.use('/payment',payment);
 app.use('/withdrawl',withdrawl);
 app.use('/referrals',referrals);
 app.use('/reinvest',reinvest);
+app.use('/transactions',transactions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
