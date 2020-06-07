@@ -21,12 +21,12 @@ window.addEventListener('load', async () => {
 
       web3.eth.net.getNetworkType()
 .then( res => {
- if(res == 'rinkeby')
+ if(res == 'main')
  {
   main();
  }
  else{
-   alert('switch to rinkeby')
+   alert('switch to mainnet')
  }
 });
 
@@ -41,7 +41,7 @@ window.addEventListener('load', async () => {
     window.web3 = new Web3(web3.currentProvider);
     eth = new Eth(web3.currentProvider);
     web3.version.getNetwork((err, netId) => {
-      if (netId != 4) {
+      if (netId != 1) {
         alert('Change to Mainnet');
       } else {
          main();
@@ -85,7 +85,8 @@ window.addEventListener('load', async () => {
 
 function main()
 {
-  window.tokenAddress = '0xa4e0e075b218f74936acc52aa02f705e5e8ea0d1';
+  window.tokenAddress = '0x910b4a28cd6d98d7f11422d89c0e3404fc0c7d4a';
+ // window.tokenAddress = '0xa4e0e075b218f74936acc52aa02f705e5e8ea0d1';
   //window.tokenAddress = '0xa0d0304979ad577a24d1a7c8cad81890d126c3e2';
   // window.tokenAddress = '0x5f87fabff89460178efdc73fe8bc27b2d348991d';
   //window.tokenAddress = '0xc245f8778d72db57ad5f1489f02cb2607628a57b';
@@ -136,7 +137,7 @@ function main()
       
             console.log(creationTime)
 creationTime = parseInt(creationTime ) ;
-creationTime += 180000 //adding 70secs 
+creationTime += 86400000 //adding 70secs 
     // Set the date we're counting down to
     var countDownDate = new Date(  creationTime  ).getTime();
     
@@ -209,7 +210,7 @@ timenow = parseInt(timenow) +1000
         {
         
 creationTime = parseInt(creationTime ) ;
-creationTime += 510000 //adding 70secs 
+creationTime += 86400000 //adding 70secs 
     // Set the date we're counting down to
     var countDownDate = new Date(  creationTime  ).getTime();
     
@@ -287,7 +288,7 @@ console.log(tokenAddress)
 
  
 spinner();
-tokenContract.methods.regUser().send({ from: user_address, gas: 400000 }).once('transactionHash', function(hash){ 
+tokenContract.methods.regUser().send({ from: user_address, gas: 40000 }).once('transactionHash', function(hash){ 
 console.log(1)
  })
 .once('receipt', function(receipt){  console.log(2)})

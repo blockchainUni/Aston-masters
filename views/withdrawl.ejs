@@ -145,16 +145,27 @@ console.log(typeof('<%- earnings %>'));
                     {
                        // var amount = document.getElementById('withdrawl_amount').value;
 
+
+                      
+
+                        if('<%- expirePeriod %>' == 'true')
+                        {
+
+                            withDrawAmounts('<%- earnings %>');
+                            
+                        }
+                        else{
                         if( 0.03 > '<%- parseFloat(earnings) %>')
                         {
                             alert('your balance should be above 0.03')
                             return
                         }
-                        else{
-                           
-                            withDrawAmounts('<%- earnings %>');
-                        }
+                        else{                           
+                                withDrawAmounts('<%- earnings %>');
+
+                            }
                                            }
+                                        }
                 
             </script>
 

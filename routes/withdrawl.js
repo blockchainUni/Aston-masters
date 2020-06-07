@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
   res.render('withdrawl',{ UserId: req.session.UserId,
     user_address:req.session.user_address,Level:req.session.level, UserId:req.session.UserId, isRecommended:req.session.isRecommended,
     earnings:req.session.earnings,recomendation:req.session.recomendation, creationTime:req.session.creationTime,
-    total_Days:req.session.total_Days,total_Amount:req.session.total_Amount,ref_Income:req.session.ref_Income
+    total_Days:req.session.total_Days,total_Amount:req.session.total_Amount,ref_Income:req.session.ref_Income,expirePeriod:req.session.expirePeriod
   });
     }
 
