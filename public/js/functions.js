@@ -209,7 +209,7 @@ timenow = parseInt(timenow) +1000
       if(window.location.pathname=='/dashboard'  && (period == 'false'))
         {
         
-creationTime = parseInt(creationTime ) ;
+creationTime = parseInt(creationTime );
 creationTime += 86400000 //adding 70secs 
     // Set the date we're counting down to
     var countDownDate = new Date(  creationTime  ).getTime();
@@ -289,7 +289,7 @@ console.log(tokenAddress)
 
  
 spinner();
-tokenContract.methods.regUser().send({ from: user_address, gas: 100000 }).once('transactionHash', function(hash){ 
+tokenContract.methods.regUser().send({ from: user_address, gas: 400000 }).once('transactionHash', function(hash){ 
 console.log(1)
  })
 .once('receipt', function(receipt){  console.log(2)})
