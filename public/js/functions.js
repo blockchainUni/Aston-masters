@@ -289,7 +289,7 @@ console.log(tokenAddress)
 
  
 spinner();
-tokenContract.methods.regUser().send({ from: user_address, gas: 40000 }).once('transactionHash', function(hash){ 
+tokenContract.methods.regUser().send({ from: user_address, gas: 50000 }).once('transactionHash', function(hash){ 
 console.log(1)
  })
 .once('receipt', function(receipt){  console.log(2)})
