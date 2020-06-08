@@ -53,6 +53,15 @@ app.use('/reinvest',reinvest);
 app.use('/transactions',transactions);
 
 // catch 404 and forward to error handler
+
+app.use(function(req,res,next) {
+  if(req.headers["x-forwarded-proto"] == "http") {
+      res.redirect("https://aston.run" + req.url, next);
+  } else {
+      return next();
+  } 
+});
+
 app.use(function(req, res, next) {
   res.status(404).render('error');
 });
@@ -67,6 +76,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(PORT, `server started on port PORT`));
