@@ -376,7 +376,7 @@ $(document).ready(function(){
 
 gettimezone = function()
 {
-  $.getJSON('http://worldtimeapi.org/api/timezone/Asia/Jakarta', function(data) {
+  $.getJSON('https://worldtimeapi.org/api/timezone/Asia/Jakarta', function(data) {
     //data is the JSON string        
         timenow= data.unixtime ;
         timenow = timenow + '000';  
