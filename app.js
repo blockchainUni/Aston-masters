@@ -25,9 +25,7 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('*', function(req, res) {  
-  res.redirect('https://' + req.headers.host + req.url);
-});
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -77,6 +75,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('*', function(req, res) {  
+  res.redirect('https://' + req.headers.host + req.url);
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(PORT, `server started on port PORT`));
