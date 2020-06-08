@@ -23,6 +23,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+
+app.get('*', function(req, res) {  
+  res.redirect('https://' + req.headers.host + req.url);
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -54,13 +60,7 @@ app.use('/transactions',transactions);
 
 // catch 404 and forward to error handler
 
-app.use(function(req,res,next) {
-  if(req.headers["x-forwarded-proto"] == "http") {
-      res.redirect("https://aston.run" + req.url, next);
-  } else {
-      return next();
-  } 
-});
+
 
 app.use(function(req, res, next) {
   res.status(404).render('error');
